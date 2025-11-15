@@ -10,9 +10,10 @@ interface WelcomeScreenProps {
   onLoginClick: () => void;
   onCreateAccountClick: () => void;
   onLoginWithPhoneClick: () => void;
+  onDriverLoginClick: () => void;
 }
 
-export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onLoginClick, onCreateAccountClick, onLoginWithPhoneClick }) => {
+export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onLoginClick, onCreateAccountClick, onLoginWithPhoneClick, onDriverLoginClick }) => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-6">
       <main className="w-full max-w-sm flex flex-col items-center text-center">
@@ -45,10 +46,10 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onLoginClick, onCr
         </div>
         
         <div className="w-full mt-16 pt-8 border-t border-zinc-200">
-           <a href="#" className="w-full flex items-center justify-center gap-3 bg-zinc-100 text-zinc-700 font-bold text-md py-4 px-6 rounded-xl hover:bg-zinc-200 focus:outline-none focus:ring-4 focus:ring-zinc-500/50 transform active:scale-95 transition-all duration-150 ease-in-out">
+           <button onClick={onDriverLoginClick} className="w-full flex items-center justify-center gap-3 bg-zinc-100 text-zinc-700 font-bold text-md py-4 px-6 rounded-xl hover:bg-zinc-200 focus:outline-none focus:ring-4 focus:ring-zinc-500/50 transform active:scale-95 transition-all duration-150 ease-in-out">
             <DriverIcon className="w-6 h-6" />
             <span>Área do Motorista</span>
-          </a>
+          </button>
         </div>
         
       </main>
